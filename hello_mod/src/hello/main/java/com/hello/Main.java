@@ -7,7 +7,7 @@ import java.util.ServiceLoader;
 import com.dep.Animal;
 import com.service.output.api.OutputService;
 
-import com.google.common.collect.Lists;
+//import com.google.common.collect.Lists;
 
 public class Main {
 
@@ -53,7 +53,7 @@ public class Main {
 	private static void initListWithGuava() {
 		System.out.println("Part 4: Use guava automatic module to create list and print it");
 
-		List<String> names = Lists.newArrayList("Lewis", "Ashley", "Maggie", "Brodie");
+		List<String> names = List.of("Lewis", "Ashley", "Maggie", "Brodie");
 		System.out.println();
 		System.out.println(names);
 
