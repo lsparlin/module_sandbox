@@ -17,11 +17,12 @@ public class Main {
 		
 		sayHello(out);
 
-		printThisModule();
+		printThisModule(out);
 
-		createAnimalAndSpeak();
+		createAnimalAndSpeak(out);
 
-		initListWithGuava();
+		initListWithGuava(out);
+
 	}
 
 	private static void sayHello(OutputService out) {
@@ -32,32 +33,31 @@ public class Main {
 		out.printOut("-----------------------");
 	}
 
-	private static void printThisModule() {
-		System.out.println("Part 2: Print module name for this class");
+	private static void printThisModule(OutputService out) {
+		out.printOut("Part 2: Print module name for this class");
 
-		System.out.println(Main.class.getModule());
+		out.printOut(Main.class.getModule());
 
-		System.out.println("-----------------------");
+		out.printOut("-----------------------");
 	}
 
-	private static void createAnimalAndSpeak() {
-		System.out.println("Part 3: use Animal class from dep module");
-		System.out.println(Animal.class.getModule());
+	private static void createAnimalAndSpeak(OutputService out) {
+		out.printOut("Part 3: use Animal class from dep module");
+		out.printOut(Animal.class.getModule());
 		
 		Animal anAnimal = new Animal();
 		anAnimal.speak();
 
-		System.out.println("-----------------------");
+		out.printOut("-----------------------");
 	}
 
-	private static void initListWithGuava() {
-		System.out.println("Part 4: Use guava automatic module to create list and print it");
+	private static void initListWithGuava(OutputService out) {
+		out.printOut("Part 4: Use guava automatic module to create list and print it");
 
 		List<String> names = List.of("Lewis", "Ashley", "Maggie", "Brodie");
-		System.out.println();
-		System.out.println(names);
+		out.printOut(names);
 
-		System.out.println("-----------------------");
+		out.printOut("-----------------------");
 	}
 
 	private static OutputService getOutputServiceFromServiceLoader() {
@@ -68,7 +68,7 @@ public class Main {
 		OutputService service = iter.next();
 
 		service.printOut("Implicit output service found");
-		System.out.println("-----------------------");
+		service.printOut("-----------------------");
 
 		return service;
 	}
