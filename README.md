@@ -17,3 +17,13 @@ _also runs classes using java --module-path mods -m [module/Main]_
 
 ## Execute runtime (specify module with Main class)
 `./helloapp/bin/java -m hello`
+
+### Only needed modules in the runtime
+```
+./helloapp/bin/java --list-modules
+dep@1.0
+hello@1.0
+java.base@9-ea
+service@1.0
+
+```
