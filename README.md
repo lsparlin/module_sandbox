@@ -3,6 +3,7 @@ Just a little tinkering with JDK9 modules.
 
 ## recompile classes in /mods directory
 _also runs classes using java --module-path -m module/Main_
+
 `./compile_and_run_java.sh`
 
 ## Create module jar files for each module (in /mlib)
